@@ -1,5 +1,5 @@
 # Assignment 2
-### Social Network Analysis
+### Data Wrangling and Visualization
 
 In Assignment 2 we will be practicing data manipulation including use of the tidyverse.
 
