@@ -7,18 +7,27 @@ output: html_document
 #Part I
 
 ## Data Wrangling
+In the hackathon a project was proposed to collect data from student video watching, a sample of this data is available in the file video-data.csv.
+
+stid = student id
+year = year student watched video
+participation = whether or not the student opened the video
+watch.time = how long the student watched the video for
+confusion.points = how many times a student rewatched a section of a video
+key,points = how many times a student skipped or increased the speed of a video
+
 ```{r}
 #Install the 'tidyverse' package or if that does not work, install the 'dplyr' and 'tidyr' packages.
 
 #Load the package(s) you just installed
 
+library(tidyverse)
 library(tidyr)
 library(dplyr)
 
-#Read in the data
 D1 <- read.csv("video-data.csv", header = TRUE)
 
-#Create a data frame only contains the years 2018
+#Create a data frame that only contains the years 2018
 D2 <- filter(D1, year == 2018)
 ```
 
@@ -36,7 +45,7 @@ hist(D2$watch.time, breaks = 100)
 
 hist(D2$watch.time, breaks = 100, ylim = c(0,10))
 
-#Restore the y-axis and change the breaks so that they are 0-10, 10-20, 20-80, 80-100
+#Restore the y-axis and change the breaks so that they are 0-5, 5-20, 20-25, 25-35
 
 hist(D2$watch.time, breaks = c(0,5,20,25,35))
 
